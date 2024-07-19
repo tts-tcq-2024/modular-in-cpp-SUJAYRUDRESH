@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "TelecomWireColorPair.hpp"
+#include "TelecomColorCodingReferenceManualTest.cpp"
 
 void testNumberToPair(int pairNumber,
     TelecomColorCoding::MajorWireColor expectedMajor,
