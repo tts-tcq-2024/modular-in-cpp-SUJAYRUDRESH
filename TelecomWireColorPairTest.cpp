@@ -31,5 +31,6 @@ int main() {
     testPairToNumber(TelecomColorCoding::MajorWireColor::BLACK, TelecomColorCoding::MinorWireColor::ORANGE, 12);
     testPairToNumber(TelecomColorCoding::MajorWireColor::VIOLET, TelecomColorCoding::MinorWireColor::SLATE, 25);
 
+    testColorCodingReferenceManual();
     return 0;
 }
