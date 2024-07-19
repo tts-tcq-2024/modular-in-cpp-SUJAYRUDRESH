@@ -12,16 +12,23 @@ namespace TelecomColorCoding
         private:
             MajorWireColor majorWireColor;
             MinorWireColor minorWireColor;
+            static const char* majorWireColorNames[];
+            static const char* minorWireColorNames[];
+            static int numberOfMinorWireColors;
+
         public:
             WireColorPair(MajorWireColor major, MinorWireColor minor);
             MajorWireColor getMajorWireColor() const;
             MinorWireColor getMinorWireColor() const;
             std::string toString() const;
+
+            static WireColorPair getWireColorPairFromNumber(int wirePairNumber);
+            static int getNumberFromWireColorPair(MajorWireColor major, MinorWireColor minor);
+            static std::string formatColorPair(const WireColorPair& colorPair);
+            static std::string formatColorPairsForMajorColor(MajorWireColor majorWireColor);
+            static std::string formatColorCodingReferenceManual();
     };
 
-    WireColorPair getWireColorPairFromNumber(int wirePairNumber);
-    int getNumberFromWireColorPair(MajorWireColor major, MinorWireColor minor);
-    std::string formatColorCodingReferenceManual();
 }
 
 #endif // TELECOM_WIRE_COLOR_PAIR_HPP
