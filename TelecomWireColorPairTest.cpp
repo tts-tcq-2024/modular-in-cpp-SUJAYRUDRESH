@@ -24,7 +24,12 @@ void testPairToNumber(
     assert(pairNumber == expectedPairNumber);
 }
 
-void testColorCodingReferenceManual();
+void testColorCodingReferenceManual() {
+    std::string referenceManual = TelecomColorCoding::WireColorPair::formatColorCodingReferenceManual();
+
+    std::cout << "Reference Manual:\n" << referenceManual << std::endl;
+    assert(referenceManual == EXPECTED_MANUAL);
+}
 
 int main() {
     testNumberToPair(4, TelecomColorCoding::MajorWireColor::WHITE, TelecomColorCoding::MinorWireColor::BROWN);
