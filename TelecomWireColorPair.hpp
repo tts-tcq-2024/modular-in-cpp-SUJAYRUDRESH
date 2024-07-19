@@ -14,7 +14,6 @@ namespace TelecomColorCoding
             MinorWireColor minorWireColor;
             static const char* majorWireColorNames[];
             static const char* minorWireColorNames[];
-            static int numberOfMinorWireColors;
 
         public:
             WireColorPair(MajorWireColor major, MinorWireColor minor);
@@ -27,6 +26,9 @@ namespace TelecomColorCoding
             static std::string formatColorPair(const WireColorPair& colorPair);
             static std::string formatColorPairsForMajorColor(MajorWireColor majorWireColor);
             static std::string formatColorCodingReferenceManual();
+
+            static int getNumberOfMajorWireColors();
+            static int getNumberOfMinorWireColors();
     };
 
 }
