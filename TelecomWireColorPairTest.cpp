@@ -24,6 +24,8 @@ void testPairToNumber(
     assert(pairNumber == expectedPairNumber);
 }
 
+void testColorCodingReferenceManual();
+
 int main() {
     testNumberToPair(4, TelecomColorCoding::MajorWireColor::WHITE, TelecomColorCoding::MinorWireColor::BROWN);
     testNumberToPair(5, TelecomColorCoding::MajorWireColor::WHITE, TelecomColorCoding::MinorWireColor::SLATE);
