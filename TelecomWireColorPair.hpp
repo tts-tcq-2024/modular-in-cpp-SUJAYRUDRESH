@@ -19,9 +19,10 @@ namespace TelecomColorCoding
             static std::string formatColorPair(const WireColorPair& colorPair);
             static std::string formatColorPairsForMajorColor(MajorWireColor majorWireColor);
             WireColorPair(MajorWireColor major, MinorWireColor minor);
-            std::string toString() const;
+            
 
         public:
+            std::string toString() const;
             MajorWireColor getMajorWireColor() const;
             MinorWireColor getMinorWireColor() const;
             static WireColorPair getWireColorPairFromNumber(int wirePairNumber);
