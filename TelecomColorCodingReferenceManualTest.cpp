@@ -36,8 +36,3 @@ void testColorCodingReferenceManual() {
     std::cout << "Reference Manual:\n" << referenceManual << std::endl;
     assert(referenceManual == expectedManual);
 }
-
-int main() {
-    testColorCodingReferenceManual();
-    return 0;
-}
