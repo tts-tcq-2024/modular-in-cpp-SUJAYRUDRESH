@@ -4,8 +4,9 @@
 namespace TelecomColorCoding 
 {
     const char* majorWireColorNames[] = {"White", "Red", "Black", "Yellow", "Violet"};
-
     const char* minorWireColorNames[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+    const int WireColorPair::numberOfMajorWireColors = sizeof(WireColorPair::majorWireColorNames) / sizeof(WireColorPair::majorWireColorNames[0]);
+    const int WireColorPair::numberOfMinorWireColors = sizeof(WireColorPair::minorWireColorNames) / sizeof(WireColorPair::minorWireColorNames[0]);
 
     WireColorPair::WireColorPair(MajorWireColor major, MinorWireColor minor):
         majorWireColor(major), minorWireColor(minor)
@@ -26,16 +27,16 @@ namespace TelecomColorCoding
         return colorPairStr;
     }
 
-    WireColorPair getWireColorPairFromNumber(int wirePairNumber) {
+    WireColorPair WireColorPair::getWireColorPairFromNumber(int wirePairNumber) {
         int zeroBasedPairNumber = wirePairNumber - 1;
         MajorWireColor majorWireColor = 
-            static_cast<MajorWireColor>(zeroBasedPairNumber / (sizeof(minorWireColorNames) / sizeof(minorWireColorNames[0])));
+            static_cast<MajorWireColor>(zeroBasedPairNumber / numberOfMinorWireColors);
         MinorWireColor minorWireColor =
-            static_cast<MinorWireColor>(zeroBasedPairNumber % (sizeof(minorWireColorNames) / sizeof(minorWireColorNames[0])));
+            static_cast<MinorWireColor>(zeroBasedPairNumber % numberOfMinorWireColors);
         return WireColorPair(majorWireColor, minorWireColor);
     }
 
-    int getNumberFromWireColorPair(MajorWireColor major, MinorWireColor minor) {
-        return static_cast<int>(major) * (sizeof(minorWireColorNames) / sizeof(minorWireColorNames[0])) + static_cast<int>(minor) + 1;
+    int WireColorPair::getNumberFromWireColorPair(MajorWireColor major, MinorWireColor minor) {
+        return static_cast<int>(major) * numberOfMinorWireColors + static_cast<int>(minor) + 1;
     }
 }
